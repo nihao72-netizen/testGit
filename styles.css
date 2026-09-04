@@ -235,15 +235,22 @@ h2 {
   word-break: keep-all;
 }
 
+/* 히어로 제목은 고딕(산세리프)으로, 크기는 기존의 2/3.
+   한글은 글자틀이 꽉 차서 라틴 기준의 좁은 행간(0.88)을 쓰면 줄이 겹친다. */
 h1 {
-  max-width: 10ch;
-  font-size: clamp(3.8rem, 7.5vw, 8.5rem);
-  line-height: 0.88;
+  max-width: 20ch;
+  font-family: var(--font-body);
+  font-size: clamp(2.55rem, 5vw, 5.65rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
 }
 
+/* 고딕 한글에는 진짜 이탤릭이 없어 기울임이 합성된다. 강조는 색으로만 준다. */
 h1 em {
   color: var(--color-accent-strong);
-  font-weight: 400;
+  font-style: normal;
+  font-weight: inherit;
 }
 
 .hero__intro {
@@ -887,7 +894,7 @@ a.is-placeholder {
 
 @media (max-width: 34rem) {
   h1 {
-    font-size: clamp(3.15rem, 15vw, 4.8rem);
+    font-size: clamp(2.1rem, 10vw, 3.2rem);
   }
 
   .pattern-study {
